@@ -1,0 +1,10 @@
+<resources>
+
+	<string name="app_name">JokeApp</string>
+	<string name="hello_world">Hello world!</string>
+	<string name="menu_settings">Settings</string>
+	<string name="dialog_no_profile_name">Необходимо ввести ваше имя и пароль</string>
+	<string name="dialog_no_profile_name_title">Введите данные</string>
+	<string name="wrong_password">Неверный пароль</string>
+	<string name="ok">Ок</string>
+</resources>

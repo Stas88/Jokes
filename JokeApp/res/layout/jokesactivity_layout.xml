@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    
+>
+<LinearLayout 
+    
+    android:orientation="vertical" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/gray"
+    android:padding="10dp">
+
+     <TextView android:id="@+id/txtTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp" />
+     
+     
+     <LinearLayout 
+	    android:orientation="horizontal" 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="8dp"
+	   >
+     
+	     <TextView android:id="@+id/likesText"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:textSize="18dp"
+	        android:textColor="@color/black"
+	        android:text="Лайков: "
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	     
+	     <TextView android:id="@+id/likes"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:textSize="18dp"
+	        android:textColor="@color/black"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	     
+	      <Button
+	           android:layout_marginLeft="5dp"
+	          android:id="@+id/like"
+		      android:layout_height="wrap_content"
+		      android:layout_width="wrap_content"
+		      android:text="+1"
+		     
+		     />
+	      
+	      
+	      <TextView android:id="@+id/dislikesText"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:textSize="18dp"
+	        android:textColor="@color/black"
+	        android:text="Не нравится: "
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	     
+	     <TextView android:id="@+id/dislikes"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:textSize="18dp"
+	        android:textColor="@color/black"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	      
+	       <Button
+	          android:id="@+id/dislike"
+		      android:layout_height="wrap_content"
+		      android:layout_width="wrap_content"
+		      android:text="-1"
+		      
+		      />
+		
+
+     </LinearLayout>
+     
+     <View
+	    android:orientation="horizontal" 
+	    android:layout_width="fill_parent"
+	    android:layout_height="2dp"
+	    android:color="#FFFFFF"/>
+     
+     <LinearLayout 
+	    android:orientation="vertical" 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:padding="10dp">
+     
+       <LinearLayout 
+	    android:orientation="horizontal" 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="8dp"
+	   >
+     
+	     <TextView android:id="@+id/authorText"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:textSize="18dp"
+	        android:textColor="@color/black"
+	        android:text="Автор: "
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	     
+	     <TextView android:id="@+id/author"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:textSize="18dp"
+	        android:textColor="@color/black"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	     
+	   
+		
+
+     	</LinearLayout>
+     	
+       <LinearLayout 
+	    android:orientation="vertical" 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:padding="10dp">
+     
+    
+     	 
+        <LinearLayout 
+	    android:orientation="horizontal" 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="8dp"
+	  	 >
+     
+		     <TextView android:id="@+id/aboutText"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:textSize="18dp"
+		        android:textColor="@color/black"
+		        android:text="Об авторе: "
+		        android:layout_marginTop="5dp"
+		        android:layout_marginBottom="5dp" />
+		     
+		     <TextView android:id="@+id/about"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:textSize="18dp"
+		        android:textColor="@color/black"
+		        android:layout_marginTop="5dp"
+		        android:layout_marginBottom="5dp" />
+		     
+	   
+     	 </LinearLayout>
+     	 
+        <LinearLayout 
+        android:id="@+id/commentsLayout"    
+	    android:orientation="vertical" 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="8dp"
+	   >
+     
+	     <TextView android:id="@+id/commentsText"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18dp"
+	        android:textColor="@color/black"
+	        android:text="Комментарии: "
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	     
+	 
+	     
+	     
+	  
+     </LinearLayout>
+     	 
+            
+     <LinearLayout 
+	    android:orientation="vertical" 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="8dp"
+	   >
+     
+	     <TextView android:id="@+id/commentText"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18dp"
+	        android:textColor="@color/black"
+	        android:text="Добавить комментарий: "
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	     
+	     <EditText android:id="@+id/comment"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:singleLine="false"
+	        android:lines="4"
+	        android:textColor="@color/black"
+	        android:layout_marginTop="5dp"
+	         />
+	     
+	      <Button
+	          android:id="@+id/add_comment"
+		      android:layout_height="wrap_content"
+		      android:layout_width="wrap_content"
+		      android:layout_gravity="right"
+		      android:text="Доавить"
+		      android:focusable="false"
+		      />
+	     
+	  
+     </LinearLayout>
+      </LinearLayout>
+        </LinearLayout>
+    
+</LinearLayout>
+</ScrollView>

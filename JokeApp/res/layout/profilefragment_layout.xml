@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/gray"
+    android:padding="10dp">
+
+     
+     
+     <LinearLayout 
+	    android:orientation="horizontal" 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	   >
+     
+	     <TextView android:id="@+id/nameText"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18dp"
+	        android:textColor="@color/black"
+	        android:text="Ваш Ник:*"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	     
+	     <EditText android:id="@+id/name"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:textSize="18dp"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	     
+	     
+     </LinearLayout>
+     
+ 	  <LinearLayout 
+	    android:orientation="horizontal" 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	   >
+     
+	     <TextView android:id="@+id/passwordText"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18dp"
+	        android:textColor="@color/black"
+	        android:text="Пароль:* "
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	     
+	     <EditText android:id="@+id/password"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:lines="2"
+	        android:textSize="18dp"
+	        android:singleLine="false"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	     
+	     
+     </LinearLayout>
+     
+ 	    <LinearLayout 
+	    android:orientation="horizontal" 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	   >
+     
+	     <TextView android:id="@+id/aboutText"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18dp"
+	        android:textColor="@color/black"
+	        android:text="О вас: "
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	     
+	     <EditText android:id="@+id/about"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:textSize="18dp"
+
+			android:lines="3"
+	        android:singleLine="false"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" />
+	     
+	     
+     </LinearLayout>
+     
+ 	    
+ 	     
+     
+ 	    <LinearLayout 
+	    android:orientation="horizontal" 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="32dp"
+	    android:gravity="center_horizontal"
+	   >
+     
+	     <Button
+	          android:layout_marginLeft="5dp"
+	          android:id="@+id/ok"
+		      android:layout_height="wrap_content"
+		      android:layout_width="wrap_content"
+		      android:text="Сохранить"
+		      android:background="@drawable/btn_blue"
+		      
+		     />
+	      
+	       <Button
+	          android:id="@+id/cancel"
+		      android:layout_height="wrap_content"
+		      android:layout_width="wrap_content"
+		      android:layout_marginLeft="16dp"
+		      android:text="Вернуть"
+		      android:background="@drawable/btn_blue"
+		      />
+	     
+	     
+     </LinearLayout>
+     
+</LinearLayout>
+		
+       
+        
