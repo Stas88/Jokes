@@ -31,8 +31,6 @@ public class JokesAdapter extends ArrayAdapter<ParseObject>  {
 	        this.layoutResourceId = layoutResourceId;
 	        this.context = context;
 	        this.data = data;
-	        
-	        
 	    }
 
 	    @Override
@@ -128,9 +126,7 @@ public class JokesAdapter extends ArrayAdapter<ParseObject>  {
 	        });
 	        return row;
 	    }
-	    
-	    
-	    
+
 	    
 	    static class ParceHolder
 	    {

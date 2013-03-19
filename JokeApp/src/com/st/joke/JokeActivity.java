@@ -5,6 +5,7 @@ import java.util.List;
 import model.Joke;
 import util.MemoryCommunicator;
 import util.ParseObjectJokeUtil;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,8 +30,8 @@ public class JokeActivity extends Activity {
 	private TextView text;
 	private TextView likesView;
 	private TextView dislikesView;
-	private Button like;
-	private Button dislike;
+	private ImageView like;
+    private ImageView dislike;
 	private TextView author;
 
 	
@@ -60,12 +62,14 @@ public class JokeActivity extends Activity {
 		Log.d(TAG, "joke_id:  " + joke.getId());
 	    query.whereEqualTo("joke_id", joke.getId());
 	    query.findInBackground(new FindCallback() {
-	        public void done(List<ParseObject> scoreList, ParseException e) {
+	        @SuppressLint("ResourceAsColor")
+			public void done(List<ParseObject> scoreList, ParseException e) {
 	            if (e == null)  {
 	            	for(ParseObject p : scoreList) {
 	            		Log.d(TAG, "scoreList item: " + p.getString(("text")));
 	            		TextView v = new TextView(JokeActivity.this);
 	            		v.setText(p.getString("author") + ": " + p.getString(("text")));
+	            		v.setTextColor(R.color.black);
 	            		commentsLayout.addView(v);
 	            	}
 	            } else {
@@ -134,8 +138,8 @@ public class JokeActivity extends Activity {
 	     text = (TextView)findViewById(R.id.txtTitle);
          likesView = (TextView)findViewById(R.id.likes);
          dislikesView = (TextView)findViewById(R.id.dislikes);
-         like = (Button)findViewById(R.id.like);
-         dislike = (Button)findViewById(R.id.dislike);
+         like = (ImageView)findViewById(R.id.like);
+         dislike = (ImageView)findViewById(R.id.dislike);
          author = (TextView)findViewById(R.id.author);
          about = (TextView)findViewById(R.id.about);
          add_comment = (Button)findViewById(R.id.add_comment);
@@ -143,6 +147,7 @@ public class JokeActivity extends Activity {
          
          add_comment.setOnClickListener(new OnClickListener() {
 			
+			@SuppressLint("ResourceAsColor")
 			@Override
 			public void onClick(View v) {
 				final String commentText = comment.getText().toString();
@@ -186,11 +191,13 @@ public class JokeActivity extends Activity {
 						comment.setText("");
 						TextView v1 = new TextView(JokeActivity.this);
 	            		v1.setText(author + ": " + commentText);
+	            		v1.setTextColor(R.color.black);
 	            		tempLayout.addView(v1);
             		
 					} else {
 						AlertDialog.Builder builder = new AlertDialog.Builder(JokeActivity.this);
 
+						
 						
 						builder.setMessage(R.string.dialog_no_profile_name)
 						       .setTitle(R.string.dialog_no_profile_name_title);

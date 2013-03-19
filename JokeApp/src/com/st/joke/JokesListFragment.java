@@ -25,7 +25,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.st.joke.adapter.JokesAdapter;
 
-@SuppressLint("NewApi") 
+@SuppressLint({ "NewApi", "ValidFragment" }) 
 public class JokesListFragment
     extends ListFragment
 {
@@ -92,6 +92,7 @@ public class JokesListFragment
 	    query.findInBackground(new FindCallback() {
 	        public void done(List<ParseObject> scoreList, ParseException e) {
 	            if (e == null)  {
+	            	
 	            	JokesAdapter adapter = new JokesAdapter(getActivity(),
 	            		       R.layout.jokeslist_item, scoreList);
 	            	listView.setAdapter(adapter);

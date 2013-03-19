@@ -19,90 +19,82 @@
         android:textColor="@color/black"
         android:layout_marginTop="5dp" />
      
-     
-     <LinearLayout 
+      <RelativeLayout 
 	    android:orientation="horizontal" 
-	    android:layout_width="wrap_content"
+	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_marginTop="8dp"
+	    android:layout_gravity="right"
 	   >
-     
-	     <TextView android:id="@+id/likesText"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:textSize="18dp"
-	        android:textColor="@color/black"
-	        android:text="Лайков: "
-	        android:layout_marginTop="5dp"
-	        android:layout_marginBottom="5dp" />
-	     
-	     <TextView android:id="@+id/likes"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:textSize="18dp"
-	        android:textColor="@color/black"
-	        android:layout_marginTop="5dp"
-	        android:layout_marginBottom="5dp" />
-	     
-	      <Button
-	           android:layout_marginLeft="5dp"
-	          android:id="@+id/like"
-		      android:layout_height="wrap_content"
-		      android:layout_width="wrap_content"
-		      android:text="+1"
-		     
-		     />
-	      
-	      
-	      <TextView android:id="@+id/dislikesText"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:textSize="18dp"
-	        android:textColor="@color/black"
-	        android:text="Не нравится: "
-	        android:layout_marginTop="5dp"
-	        android:layout_marginBottom="5dp" />
-	     
-	     <TextView android:id="@+id/dislikes"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:textSize="18dp"
-	        android:textColor="@color/black"
-	        android:layout_marginTop="5dp"
-	        android:layout_marginBottom="5dp" />
-	      
-	       <Button
-	          android:id="@+id/dislike"
-		      android:layout_height="wrap_content"
-		      android:layout_width="wrap_content"
-		      android:text="-1"
-		      
-		      />
-		
+     	  <RelativeLayout 
+		        android:id="@+id/rl"
+			    android:layout_width="170dp"
+			    android:layout_height="wrap_content"
+			   >
+				   
+     	      
+		     <ImageView
+		         android:id="@+id/like"
+			      android:layout_width="wrap_content"
+     			  android:layout_height="wrap_content" 
+			      android:focusable="false"
+			      android:layout_marginLeft="-8dp"
+			      android:layout_alignParentLeft="true"
+			      android:src="@drawable/rating_good" 
+			     />
 
-     </LinearLayout>
+			     <TextView android:id="@+id/likes"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:textSize="18dp"
+			        android:textColor="@color/avtor_text_color"
+			        android:paddingTop="7dp"
+			        android:layout_toRightOf="@+id/like"
+			        />
+		
+			       <ImageView
+		          	android:id="@+id/dislike"
+				    android:layout_width="wrap_content"
+        			android:layout_height="wrap_content" 
+					android:src="@drawable/rating_bad" 
+					android:layout_toLeftOf="@+id/dislikes"
+				    android:focusable="false"
+				      />
+			     
+			      <TextView android:id="@+id/dislikes"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textSize="18dp"
+			        android:textColor="@color/avtor_text_color"
+			        android:paddingTop="7dp"
+			        android:layout_alignParentRight="true"
+		           />
+	      
+	       </RelativeLayout>
+	  </RelativeLayout>
      
      <View
 	    android:orientation="horizontal" 
 	    android:layout_width="fill_parent"
 	    android:layout_height="2dp"
-	    android:color="#FFFFFF"/>
+	    />
      
      <LinearLayout 
 	    android:orientation="vertical" 
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
-	    android:padding="10dp">
+	   >
      
        <LinearLayout 
 	    android:orientation="horizontal" 
-	    android:layout_width="wrap_content"
+	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
+	    android:background="@color/abs__holo_blue_light"
 	    android:layout_marginTop="8dp"
 	   >
      
 	     <TextView android:id="@+id/authorText"
-	        android:layout_width="fill_parent"
+	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textSize="18dp"
 	        android:textColor="@color/black"
@@ -111,35 +103,32 @@
 	        android:layout_marginBottom="5dp" />
 	     
 	     <TextView android:id="@+id/author"
-	        android:layout_width="fill_parent"
+	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textSize="18dp"
 	        android:textColor="@color/black"
 	        android:layout_marginTop="5dp"
 	        android:layout_marginBottom="5dp" />
-	     
-	   
-		
-
      	</LinearLayout>
      	
        <LinearLayout 
 	    android:orientation="vertical" 
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
-	    android:padding="10dp">
+	    >
      
     
      	 
         <LinearLayout 
 	    android:orientation="horizontal" 
-	    android:layout_width="wrap_content"
+	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
+	    android:background="@color/abs__holo_blue_light"
 	    android:layout_marginTop="8dp"
 	  	 >
      
 		     <TextView android:id="@+id/aboutText"
-		        android:layout_width="fill_parent"
+		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:textSize="18dp"
 		        android:textColor="@color/black"
@@ -148,7 +137,7 @@
 		        android:layout_marginBottom="5dp" />
 		     
 		     <TextView android:id="@+id/about"
-		        android:layout_width="fill_parent"
+		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:textSize="18dp"
 		        android:textColor="@color/black"
@@ -174,11 +163,7 @@
 	        android:text="Комментарии: "
 	        android:layout_marginTop="5dp"
 	        android:layout_marginBottom="5dp" />
-	     
-	 
-	     
-	     
-	  
+
      </LinearLayout>
      	 
             
@@ -213,6 +198,7 @@
 		      android:layout_width="wrap_content"
 		      android:layout_gravity="right"
 		      android:text="Доавить"
+		      android:background="@drawable/btn_blue"
 		      android:focusable="false"
 		      />
 	     
