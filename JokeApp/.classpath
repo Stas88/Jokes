@@ -9,7 +9,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="lib" path="D:/Android_projects/Jokes_Last_2/JokeApp/libs/Parse-1.1.11.jar"/>
-	<classpathentry kind="lib" path="D:/programs/androidSDK/platforms/android-16"/>
+	<classpathentry kind="lib" path="G:/Android_Projects/Jokes_3/Jokes/JokeApp/libs/Parse-1.1.11.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

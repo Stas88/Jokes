@@ -1,6 +1,5 @@
 package util;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.st.joke.ParseApplication;

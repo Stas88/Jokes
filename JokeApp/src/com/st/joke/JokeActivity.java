@@ -6,7 +6,6 @@ import model.Joke;
 import util.MemoryCommunicator;
 import util.ParseObjectJokeUtil;
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,12 +19,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.MenuItem;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-public class JokeActivity extends Activity {
+@SuppressLint({ "ResourceAsColor", "ResourceAsColor" })
+public class JokeActivity extends SherlockActivity {
 	
 	private TextView text;
 	private TextView likesView;
@@ -42,12 +44,24 @@ public class JokeActivity extends Activity {
 	private LinearLayout tempLayout;
 	public static final String TAG = "JokeActivity";
 	 
-	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    case android.R.id.home:
+	        // app icon in action bar clicked; go home
+	        finish();
+	        break;
+	    }
+	    return true;
+	}
 	/** Called when the activity is first created. */
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.jokesactivity_layout);
 		initViews();
+		getSupportActionBar().setDisplayShowTitleEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+	    getSupportActionBar().setTitle(R.string.joke);
 		Intent intent = getIntent();
 		joke = (Joke)intent.getSerializableExtra("joke");
 	    final ParseObject jokeObject = ParseObjectJokeUtil.getParseObjectFromJoke(joke);
@@ -62,7 +76,7 @@ public class JokeActivity extends Activity {
 		Log.d(TAG, "joke_id:  " + joke.getId());
 	    query.whereEqualTo("joke_id", joke.getId());
 	    query.findInBackground(new FindCallback() {
-	        @SuppressLint("ResourceAsColor")
+	        @SuppressLint({ "ResourceAsColor", "ResourceAsColor", "ResourceAsColor" })
 			public void done(List<ParseObject> scoreList, ParseException e) {
 	            if (e == null)  {
 	            	for(ParseObject p : scoreList) {
@@ -147,7 +161,7 @@ public class JokeActivity extends Activity {
          
          add_comment.setOnClickListener(new OnClickListener() {
 			
-			@SuppressLint("ResourceAsColor")
+			@SuppressLint({ "ResourceAsColor", "ResourceAsColor", "ResourceAsColor" })
 			@Override
 			public void onClick(View v) {
 				final String commentText = comment.getText().toString();
@@ -217,4 +231,6 @@ public class JokeActivity extends Activity {
 		});
 	}
 
+	
+	
 }
