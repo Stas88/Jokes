@@ -1,11 +1,6 @@
 package com.st.joke;
 
-import android.app.AlertDialog;
 import android.app.Application;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 
 import com.parse.Parse;
 import com.parse.ParseACL;
@@ -37,31 +32,8 @@ public class ParseApplication extends Application {
 		
 		ParseACL.setDefaultACL(defaultACL, true);
 		
-		if(!isOnline()) {
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-			
-			
-			builder.setMessage(R.string.no_connection)
-			       .setTitle(R.string.no_connection_title);
-			builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-		           public void onClick(DialogInterface dialog, int id) {
-		               dialog.dismiss();
-		           }
-		       });
-			
-			AlertDialog dialog = builder.create();
-			dialog.show();
-		}
+		
 	}
 	
-	public  boolean isOnline() {
-	    ConnectivityManager cm =
-	        (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-	    NetworkInfo netInfo = cm.getActiveNetworkInfo();
-	    if (netInfo != null && netInfo.isConnectedOrConnecting()) {
-	        return true;
-	    }
-	    return false;
-	}
+	
 }

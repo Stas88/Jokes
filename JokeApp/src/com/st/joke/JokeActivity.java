@@ -3,12 +3,17 @@ package com.st.joke;
 import java.util.List;
 
 import model.Joke;
+import util.DialogUtil;
 import util.MemoryCommunicator;
+import util.NetUtil;
 import util.ParseObjectJokeUtil;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +31,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-@SuppressLint({ "ResourceAsColor", "ResourceAsColor" })
+@SuppressLint({ "ResourceAsColor", "ResourceAsColor", "ResourceAsColor", "ResourceAsColor" })
 public class JokeActivity extends SherlockActivity {
 	
 	private TextView text;
@@ -62,6 +67,9 @@ public class JokeActivity extends SherlockActivity {
 		getSupportActionBar().setDisplayShowTitleEnabled(true);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	    getSupportActionBar().setTitle(R.string.joke);
+	    
+	   
+	    
 		Intent intent = getIntent();
 		joke = (Joke)intent.getSerializableExtra("joke");
 	    final ParseObject jokeObject = ParseObjectJokeUtil.getParseObjectFromJoke(joke);
@@ -209,28 +217,17 @@ public class JokeActivity extends SherlockActivity {
 	            		tempLayout.addView(v1);
             		
 					} else {
-						AlertDialog.Builder builder = new AlertDialog.Builder(JokeActivity.this);
-
-						
-						
-						builder.setMessage(R.string.dialog_no_profile_name)
-						       .setTitle(R.string.dialog_no_profile_name_title);
-						builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-					           public void onClick(DialogInterface dialog, int id) {
-					               dialog.dismiss();
-					           }
-					       });
-						
-						AlertDialog dialog = builder.create();
-						dialog.show();
+						DialogUtil.makeSimpleDialog(JokeActivity.this, R.string.dialog_no_profile_name_title, R.string.dialog_no_profile_name);
 					}
 					
 				}
-				
+
 			}
 		});
 	}
 
 	
+	
+
 	
 }

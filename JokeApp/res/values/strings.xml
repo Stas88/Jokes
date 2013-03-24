@@ -8,6 +8,6 @@
 	<string name="wrong_password">Неверный пароль</string>
 	<string name="ok">Ок</string>
 	<string name="joke">Шутка</string>
-	<string name="no_connection">Необходимо ввести ваше имя и пароль в разделе "Профиль"</string>
+	<string name="no_connection">Для работы необходимо подключение к интернету</string>
 	<string name="no_connection_title">Нет подключения</string>
 </resources>

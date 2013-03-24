@@ -10,6 +10,8 @@
 		<style name="Widget.MyTheme.ActionBar" parent="Widget.Sherlock.ActionBar">
 		    <item name="android:background">#0099CC</item>
 		    <item name="background">#0099CC</item>
+		    <item name="windowContentOverlay">@null</item>
+    		  <item name="android:windowContentOverlay">@null</item>
 		</style>
 
 

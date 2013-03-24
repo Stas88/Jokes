@@ -1,16 +1,20 @@
 
 package com.st.joke;
 
+import util.DialogUtil;
+import util.NetUtil;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.OnNavigationListener;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.Window;
 import com.st.joke.adapter.ViewPagerAdapter;
 
 public class JokesListActivity
@@ -25,12 +29,19 @@ public class JokesListActivity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_main);
         categories = getResources().getStringArray(R.array.categories);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        
         pager = ((ViewPager) findViewById(R.id.pager));
         configureViewPager();
         configureActionBar();
+        if(!NetUtil.isOnline(this)) {
+	    	DialogUtil.makeSimpleDialog(this, R.string.no_connection_title, R.string.no_connection);
+		}
+        
+        
     }
 
     @Override

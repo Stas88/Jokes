@@ -9,7 +9,6 @@ import util.ParseObjectJokeUtil;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +18,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.SherlockListFragment;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -26,9 +26,7 @@ import com.parse.ParseQuery;
 import com.st.joke.adapter.JokesAdapter;
 
 @SuppressLint({ "NewApi", "ValidFragment" }) 
-public class JokesListFragment
-    extends ListFragment
-{
+public class JokesListFragment extends SherlockListFragment {
 	
 	ListView listView;
 	ViewGroup root;
@@ -36,8 +34,6 @@ public class JokesListFragment
     public static final String TAG = "JokesListFragment";
     private Categories category;
   
-    
-   
     public JokesListFragment(Categories category) {
     	super();
     	this.category = category;
@@ -46,7 +42,6 @@ public class JokesListFragment
     
     public JokesListFragment() {
     	super();
-    	
     }
     
     @Override
@@ -62,7 +57,9 @@ public class JokesListFragment
         super.onActivityCreated(savedInstanceState);
         Log.d(TAG,"onActivityCreated");
 		listView = (ListView) root.findViewById(android.R.id.list);
-		 populateListView();
+		Log.d(TAG, "ProgressBar on in fragment");
+		populateListView();
+		
     }
     
     public void onStart() {
@@ -79,11 +76,14 @@ public class JokesListFragment
     }
     
     private void populateListView() {
+    	
     	ParseQuery query = new ParseQuery("Joke");
 		
 		if(category == category.BEST_JOKES) {
 			query.addDescendingOrder("Likes");
+			getSherlockActivity().setSupportProgressBarIndeterminateVisibility(true);
 		} else if (category == category.NEW_JOKES) {
+			getSherlockActivity().setSupportProgressBarIndeterminateVisibility(true);
 			query.addDescendingOrder("createdAt");
 		} else {
 			query.addDescendingOrder("createdAt");
@@ -109,6 +109,9 @@ public class JokesListFragment
 	        				
 	        			}
 	        		}); 
+
+	            Log.d(TAG, "ProgressBar off in fragment");
+	            getSherlockActivity().setSupportProgressBarIndeterminateVisibility(false);	
 	            } else {
 	                Log.d("score", "Error: " + e.getMessage());
 	            }
